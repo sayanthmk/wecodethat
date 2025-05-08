@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wecodethat/constants/colors.dart';
 import 'package:wecodethat/controller/auth_controller.dart';
 import 'package:wecodethat/view/auth_sec/pin_setup/pin_field.dart';
 import 'package:wecodethat/view/todo/list_screen/list_screen.dart';
@@ -17,7 +18,7 @@ class PinSetupScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
-        backgroundColor: Colors.purple.shade800,
+        backgroundColor: WeCodeThatColors.purple8,
         foregroundColor: Colors.white,
         title: const Text(
           'Security Setup',
@@ -45,7 +46,7 @@ class PinSetupScreen extends StatelessWidget {
                     child: Icon(
                       Icons.security_rounded,
                       size: 80,
-                      color: Colors.purple.shade800,
+                      color: WeCodeThatColors.purple8,
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -54,7 +55,7 @@ class PinSetupScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.purple.shade800,
+                      color: WeCodeThatColors.purple8,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -143,7 +144,7 @@ class PinSetupScreen extends StatelessWidget {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple.shade800,
+                      backgroundColor: WeCodeThatColors.purple8,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       minimumSize: const Size.fromHeight(56),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wecodethat/constants/colors.dart';
 import 'package:wecodethat/controller/auth_controller.dart';
 
 class PInSetupForm extends StatelessWidget {
@@ -53,18 +54,18 @@ class PInSetupForm extends StatelessWidget {
             controller: provider.pinController,
             decoration: InputDecoration(
               labelText: 'Enter PIN',
-              labelStyle: TextStyle(color: Colors.purple.shade700),
+              labelStyle: TextStyle(color: WeCodeThatColors.purple7),
               hintText: '••••',
               prefixIcon: Icon(
                 Icons.pin_outlined,
-                color: Colors.purple.shade700,
+                color: WeCodeThatColors.purple7,
               ),
               suffixIcon: IconButton(
                 icon: Icon(
                   provider.isPinVisible
                       ? Icons.visibility_off
                       : Icons.visibility,
-                  color: Colors.purple.shade700,
+                  color: WeCodeThatColors.purple7,
                 ),
                 onPressed: provider.togglePinVisibility,
               ),
@@ -80,11 +81,11 @@ class PInSetupForm extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.purple.shade700),
+                borderSide: BorderSide(color: WeCodeThatColors.purple7),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Colors.red),
+                borderSide: const BorderSide(color: WeCodeThatColors.red),
               ),
             ),
             keyboardType: TextInputType.number,
@@ -116,18 +117,18 @@ class PInSetupForm extends StatelessWidget {
             controller: provider.confirmPinController,
             decoration: InputDecoration(
               labelText: 'Confirm PIN',
-              labelStyle: TextStyle(color: Colors.purple.shade700),
+              labelStyle: TextStyle(color: WeCodeThatColors.purple7),
               hintText: '••••',
               prefixIcon: Icon(
                 Icons.check_circle_outline,
-                color: Colors.purple.shade700,
+                color: WeCodeThatColors.purple7,
               ),
               suffixIcon: IconButton(
                 icon: Icon(
                   provider.isConfirmPinVisible
                       ? Icons.visibility_off
                       : Icons.visibility,
-                  color: Colors.purple.shade700,
+                  color: WeCodeThatColors.purple7,
                 ),
                 onPressed: provider.toggleConfirmPinVisibility,
               ),
@@ -143,11 +144,11 @@ class PInSetupForm extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.purple.shade700),
+                borderSide: BorderSide(color: WeCodeThatColors.purple7),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Colors.red),
+                borderSide: const BorderSide(color: WeCodeThatColors.red),
               ),
             ),
             keyboardType: TextInputType.number,

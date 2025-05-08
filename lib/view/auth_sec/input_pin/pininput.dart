@@ -45,7 +45,7 @@ class InputSection extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.purple.shade900,
+                color: WeCodeThatColors.purple9,
               ),
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
@@ -59,7 +59,7 @@ class InputSection extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.purple.shade900,
+                color: WeCodeThatColors.purple9,
               ),
               decoration: BoxDecoration(
                 color: WeCodeThatColors.primaryWhite,
@@ -83,7 +83,7 @@ class InputSection extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.purple.shade900,
+                color: WeCodeThatColors.purple9,
               ),
               decoration: BoxDecoration(
                 color: Colors.purple.shade50,
@@ -97,12 +97,12 @@ class InputSection extends StatelessWidget {
               textStyle: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.red,
+                color: WeCodeThatColors.red,
               ),
               decoration: BoxDecoration(
                 color: Colors.red.shade50,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.red),
+                border: Border.all(color: WeCodeThatColors.red),
               ),
             ),
           ),
@@ -138,7 +138,7 @@ class InputSection extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.error_outline,
-                    color: Colors.red,
+                    color: WeCodeThatColors.red,
                     size: 20,
                   ),
                   const SizedBox(width: 8),
@@ -146,7 +146,7 @@ class InputSection extends StatelessWidget {
                     child: Text(
                       provider.errorMessage,
                       style: const TextStyle(
-                        color: Colors.red,
+                        color: WeCodeThatColors.red,
                         fontWeight: FontWeight.w500,
                       ),
                     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wecodethat/constants/colors.dart';
 import 'package:wecodethat/controller/auth_controller.dart';
 import 'package:wecodethat/controller/todo_controller.dart';
 import 'package:wecodethat/view/auth_sec/pin_setup/pin_setup.dart';
@@ -19,7 +20,7 @@ class TodoListScreen extends StatelessWidget {
         title: const Text(
           'My Tasks',
           style: TextStyle(
-            color: Colors.white,
+            color: WeCodeThatColors.primaryWhite,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
@@ -29,7 +30,8 @@ class TodoListScreen extends StatelessWidget {
           Consumer<AuthcontrolProvider>(
             builder: (context, authprovider, child) {
               return IconButton(
-                icon: const Icon(Icons.lock_outline, color: Colors.white),
+                icon: const Icon(Icons.lock_outline,
+                    color: WeCodeThatColors.primaryWhite),
                 tooltip: 'Change PIN',
                 onPressed: () {
                   authprovider.deletePin();
@@ -42,7 +44,6 @@ class TodoListScreen extends StatelessWidget {
               );
             },
           ),
-       
         ],
       ),
       body: Consumer<TodoProvider>(
@@ -53,11 +54,10 @@ class TodoListScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                      Icons.check_circle_outline,
-                      size: 100,
-                      color: Colors.grey.shade400,
-                    ),
-              
+                    Icons.check_circle_outline,
+                    size: 100,
+                    color: Colors.grey.shade400,
+                  ),
                   const SizedBox(height: 20),
                   Text(
                     'No tasks yet',
@@ -85,7 +85,7 @@ class TodoListScreen extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.purple.shade50, Colors.white],
+                colors: [Colors.purple.shade50, WeCodeThatColors.primaryWhite],
               ),
             ),
             child: Padding(
@@ -186,11 +186,12 @@ class TodoListScreen extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         Icon(Icons.delete,
-                                            size: 18, color: Colors.red),
+                                            size: 18,
+                                            color: WeCodeThatColors.red),
                                         SizedBox(width: 8),
                                         Text('Delete',
-                                            style:
-                                                TextStyle(color: Colors.red)),
+                                            style: TextStyle(
+                                                color: WeCodeThatColors.red)),
                                       ],
                                     ),
                                   ),

@@ -84,14 +84,13 @@ class PinAuthScreen extends StatelessWidget {
 
                       const SizedBox(height: 32),
 
-                      //  button
                       ElevatedButton(
                         onPressed: provider.isAuthenticating
                             ? null
-                            : () => _verifyPin(context, provider),
+                            : () => verifyPin(context, provider),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: WeCodeThatColors.purple8,
-                          foregroundColor: Colors.white,
+                          foregroundColor: WeCodeThatColors.primaryWhite,
                           disabledBackgroundColor: Colors.purple.shade200,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           minimumSize: const Size.fromHeight(58),
@@ -105,7 +104,7 @@ class PinAuthScreen extends StatelessWidget {
                                 width: 24,
                                 height: 24,
                                 child: CircularProgressIndicator(
-                                  color: Colors.white,
+                                  color: WeCodeThatColors.primaryWhite,
                                   strokeWidth: 2,
                                 ),
                               )
@@ -137,7 +136,7 @@ class PinAuthScreen extends StatelessWidget {
     );
   }
 
-  void _verifyPin(BuildContext context, AuthcontrolProvider provider) async {
+  void verifyPin(BuildContext context, AuthcontrolProvider provider) async {
     if (_formKey.currentState!.validate()) {
       final isSuccess = await provider.verifyPin();
       if (isSuccess && context.mounted) {
@@ -151,7 +150,7 @@ class PinAuthScreen extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: WeCodeThatColors.primaryWhite,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Column(
@@ -197,85 +196,3 @@ class PinAuthScreen extends StatelessWidget {
     }
   }
 }
-
-
-
-
- // void _shakeError(BuildContext context) {
-  //   // This would need a StatefulWidget implementation
-  //   // For now, we'll just show a flash of red background
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(
-  //       content: const Text('Incorrect PIN. Please try again.'),
-  //       backgroundColor: Colors.red.shade700,
-  //       behavior: SnackBarBehavior.floating,
-  //       shape: RoundedRectangleBorder(
-  //         borderRadius: BorderRadius.circular(10),
-  //       ),
-  //       margin: const EdgeInsets.all(16),
-  //       action: SnackBarAction(
-  //         label: 'OK',
-  //         textColor: Colors.white,
-  //         onPressed: () {},
-  //       ),
-  //     ),
-  //   );
-  // }
-
-  // void _showForgotPinDialog(BuildContext context) {
-  //   showDialog(
-  //     context: context,
-  //     builder: (context) => AlertDialog(
-  //       shape: RoundedRectangleBorder(
-  //         borderRadius: BorderRadius.circular(20),
-  //       ),
-  //       title: const Text('Forgot PIN?'),
-  //       content: const Column(
-  //         mainAxisSize: MainAxisSize.min,
-  //         children: [
-  //           Icon(
-  //             Icons.support_agent,
-  //             size: 48,
-  //             color: Colors.orange,
-  //           ),
-  //           SizedBox(height: 16),
-  //           Text(
-  //             'If you forgot your PIN, you will need to reset the application.',
-  //             textAlign: TextAlign.center,
-  //           ),
-  //           SizedBox(height: 8),
-  //           Text(
-  //             'Note: This will clear all your tasks data.',
-  //             style: TextStyle(
-  //               fontWeight: FontWeight.bold,
-  //               color: Colors.red,
-  //             ),
-  //             textAlign: TextAlign.center,
-  //           ),
-  //         ],
-  //       ),
-  //       actions: [
-  //         TextButton(
-  //           onPressed: () => Navigator.pop(context),
-  //           child: const Text('Cancel'),
-  //         ),
-  //         ElevatedButton(
-  //           style: ElevatedButton.styleFrom(
-  //             backgroundColor: Colors.red,
-  //             foregroundColor: Colors.white,
-  //           ),
-  //           onPressed: () {
-  //             // Implementation for resetting would go here
-  //             Navigator.pop(context);
-  //             ScaffoldMessenger.of(context).showSnackBar(
-  //               const SnackBar(
-  //                 content: Text('This feature is coming soon'),
-  //               ),
-  //             );
-  //           },
-  //           child: const Text('Reset App'),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }

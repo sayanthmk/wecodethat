@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wecodethat/constants/colors.dart';
 import 'package:wecodethat/controller/todo_controller.dart';
 
 class DeleteTodoDialog extends StatelessWidget {
@@ -20,8 +21,8 @@ class DeleteTodoDialog extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              foregroundColor: Colors.white,
+              backgroundColor: WeCodeThatColors.red,
+              foregroundColor: WeCodeThatColors.primaryWhite,
             ),
             onPressed: () {
               todoProvider.deleteTodo(index);
