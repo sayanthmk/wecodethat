@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wecodethat/constants/thems.dart';
 import 'package:wecodethat/controller/auth_controller.dart';
-import 'package:wecodethat/controller/theme_controller.dart';
 import 'package:wecodethat/controller/todo_controller.dart';
 import 'package:wecodethat/view/auth_sec/pin_setup/pin_setup.dart';
 import 'package:wecodethat/view/todo/add_todo/add_todo.dart';
@@ -44,33 +42,7 @@ class TodoListScreen extends StatelessWidget {
               );
             },
           ),
-          Consumer<ThemeNotifier>(
-            builder: (context, themeNotifier, child) {
-              return PopupMenuButton<String>(
-                onSelected: (value) {
-                  switch (value) {
-                    case 'Light':
-                      themeNotifier.switchTheme(AppThemes.lightTheme);
-                      break;
-                    case 'Dark':
-                      themeNotifier.switchTheme(AppThemes.darkTheme);
-                      break;
-                    case 'Custom':
-                      themeNotifier.switchTheme(AppThemes.appTheme);
-                      break;
-                  }
-                },
-                icon: const Icon(Icons.color_lens),
-                itemBuilder: (context) => [
-                  const PopupMenuItem(
-                      value: 'Light', child: Text('Light Theme')),
-                  const PopupMenuItem(value: 'Dark', child: Text('Dark Theme')),
-                  const PopupMenuItem(
-                      value: 'Custom', child: Text('Custom Theme')),
-                ],
-              );
-            },
-          ),
+       
         ],
       ),
       body: Consumer<TodoProvider>(
@@ -81,10 +53,11 @@ class TodoListScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.check_circle_outline,
-                    size: 100,
-                    color: Colors.grey.shade400,
-                  ),
+                      Icons.check_circle_outline,
+                      size: 100,
+                      color: Colors.grey.shade400,
+                    ),
+              
                   const SizedBox(height: 20),
                   Text(
                     'No tasks yet',

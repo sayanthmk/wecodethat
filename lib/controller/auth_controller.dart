@@ -28,13 +28,12 @@ class AuthcontrolProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Toggles the visibility of the confirm PIN field
   void toggleConfirmPinVisibility() {
     isConfirmPinVisible = !isConfirmPinVisible;
     notifyListeners();
   }
 
-  // Saves the entered PIN to secure storage
+
   Future<void> savePin() async {
     await secureStorage.write(
       key: 'user_pin',
@@ -44,7 +43,6 @@ class AuthcontrolProvider extends ChangeNotifier {
     confirmPinController.clear();
   }
 
-// Deletes the stored PIN from secure storage
   Future<void> deletePin() async {
     await secureStorage.delete(
       key: 'user_pin',
